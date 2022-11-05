@@ -9,18 +9,18 @@ on:
 jobs:
   scheduled:
     runs-on: ubuntu-latest
-        container: rocker/tidyverse:latest
-    steps:
-    - name: Check out this repo
-      uses: actions/checkout@v2
-    - name: Run rebalancer
-      run: |-
-        Rscript -e "list.files(.)"
-    - name: Commit and push if it changed
-      run: |-
-        git config user.name "Automated"
-        git config user.email "actions@users.noreply.github.com"
-        git add -A
-        timestamp=$(date -u)
-        git commit -m "Latest data: ${timestamp}" || exit 0
-        git push
+      container: rocker/tidyverse:latest
+      steps:
+      - name: Check out this repo
+        uses: actions/checkout@v2
+      - name: Run rebalancer
+        run: |-
+          Rscript -e "list.files(.)"
+      - name: Commit and push if it changed
+        run: |-
+          git config user.name "Automated"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          timestamp=$(date -u)
+          git commit -m "Latest data: ${timestamp}" || exit 0
+          git push
