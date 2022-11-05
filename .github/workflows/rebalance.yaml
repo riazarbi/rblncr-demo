@@ -1,4 +1,4 @@
-name: Scrape latest data
+name: Rebalance portfolio
 
 on:
   push:
@@ -9,8 +9,8 @@ on:
 jobs:
   scheduled:
     runs-on: ubuntu-latest
-      container: rocker/tidyverse:latest
-      steps:
+    container: rocker/tidyverse:latest
+    steps:
       - name: Check out this repo
         uses: actions/checkout@v2
       - name: Run rebalancer
