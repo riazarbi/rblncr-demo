@@ -19,7 +19,7 @@ jobs:
     container: rocker/tidyverse:latest
     steps:
       - name: Check out this repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Run rebalancer
         run: |-
           Rscript rebalance.R
