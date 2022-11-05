@@ -1,0 +1,19 @@
+name: rblncr_github_demo
+description: Demonstrates how rblncr can be used with github actions to create an automatically rebalancing portfolio
+cash:
+  percent: 5
+assets:
+- symbol: AAPL
+  percent: 30
+- symbol: GOOG
+  percent: 30
+- symbol: VT
+  percent: 30
+- symbol: TSLA
+  percent: 5
+tolerance:
+  percent: 5
+cooldown:
+  days: 2
+created_at: 2022-10-24T11:22:01
+updated_at: 2022-10-24T11:22:01

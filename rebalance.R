@@ -1,5 +1,6 @@
 # Load libraries ----
 devtools::install_github("riazarbi/rblncr")
+library(rblncr)
 
 # Set parameters from ENV variables ----
 trading_mode = "paper"
@@ -18,7 +19,7 @@ d_conn <- alpaca_connect("data",
                          alpaca_live_secret)
 
 # Read in portfolio model and rebalancing history ----
-portfolio_model <- read_portfolio_model("inst/extdata/sample_portfolio.yaml")
+portfolio_model <- read_portfolio_model("model.yaml")
 rebalance_dates_file <- "last_rebalance"
 
 # Extract last_rebalance timestamp ----
