@@ -6,6 +6,8 @@ on:
   schedule:
     - cron:  '*/10 * * * *'
 
+env:
+  GITHUB_PAT: ${{ secrets.GH_PAT }}
 jobs:
   scheduled:
     runs-on: ubuntu-latest
