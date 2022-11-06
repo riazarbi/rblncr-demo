@@ -1,7 +1,6 @@
 name: Rebalance portfolio
 
 on:
-  push:
   workflow_dispatch:
   schedule:
     - cron:  '22 13 * * 1-5'
