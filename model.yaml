@@ -3,14 +3,10 @@ description: Demonstrates how rblncr can be used with github actions to create a
 cash:
   percent: 5
 assets:
-- symbol: AAPL
-  percent: 30
-- symbol: GOOG
-  percent: 30
 - symbol: VT
-  percent: 30
-- symbol: TSLA
-  percent: 5
+  percent: 47.5
+- symbol: BRK.B
+  percent: 47.5
 tolerance:
   percent: 5
 cooldown:
