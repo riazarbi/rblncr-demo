@@ -15,7 +15,9 @@ env:
 jobs:
   scheduled:
     runs-on: ubuntu-latest
-    container: rocker/tidyverse:latest
+    container: 
+      image: rocker/tidyverse:latest
+      options: --user root
     steps:
       - name: Check out this repo
         uses: actions/checkout@v3
@@ -24,6 +26,7 @@ jobs:
           Rscript rebalance.R
       - name: Commit and push if it changed
         run: |-
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git config user.name "Automated"
           git config user.email "actions@users.noreply.github.com"
           git add -A
