@@ -8,7 +8,7 @@ assets:
 - symbol: BRK.B
   percent: 47.5
 tolerance:
-  percent: 5
+  percent: 2
 cooldown:
   days: 2
 created_at: 2022-10-24T11:22:01
