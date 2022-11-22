@@ -73,8 +73,27 @@ if(still_cooldown) {
 
   }
 
+
+
   # Record rebalance date for cooldown tracking
   current_timestamp <- lubridate::now()
   nowtext <-  strftime(current_timestamp,"%Y-%m-%d %H:%M:%S")
   write(nowtext, rebalance_dates_file, append = TRUE)
+
+  # Record current portfolio percentages
+  current_balances <- get_portfolio_current(t_conn) |>
+    load_portfolio_targets(portfolio_model) |>
+    price_portfolio(d_conn)
+  current_balances$cash |>
+    dplyr::rename(symbol = currency) |>
+    dplyr::bind_rows(current_balances$assets) |>
+    dplyr::mutate(timestamp = current_timestamp) |>
+    dplyr::select(timestamp, symbol, percent_target, percent_held) |>
+    tidyr::pivot_longer(cols = c(percent_target, percent_held),
+                 names_prefix = "percent_",
+                 names_to = "type",
+                 values_to = "percent") |>
+    readr::write_csv(file = "percent_holdings.csv", append = TRUE)
+
+
 }
