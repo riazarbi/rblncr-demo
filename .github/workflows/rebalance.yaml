@@ -3,7 +3,7 @@ name: Rebalance portfolio
 on:
   workflow_dispatch:
   schedule:
-    - cron:  '22 15 * * 1-5'
+    - cron:  '22 17 * * 1-5'
 
 env:
   GITHUB_PAT: ${{ secrets.GH_PAT }}
