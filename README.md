@@ -1,6 +1,8 @@
 # rblncr-demo
 Demonstration of how to use [rblncr](https://github.com/riazarbi/rblncr) with GitHub Actions. 
 
+To tinker, launch in binder.
+
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/riazarbi/rblncr-demo/HEAD)
 
 ## Usage
