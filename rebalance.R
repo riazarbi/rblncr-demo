@@ -1,5 +1,7 @@
+# TODO
+#trader - fix else newline issue
+
 # Load libraries ----
-devtools::install_github("riazarbi/rblncr")
 library(rblncr)
 
 # Set parameters from ENV variables ----
@@ -46,7 +48,7 @@ if(still_cooldown) {
 
   while(!balanced) {
 
-    attempt <- balance_portfolio(portfolio_model,
+  attempt <- balance_portfolio(portfolio_model = portfolio_model,
                                  trading_connection = t_conn,
                                  pricing_connection = d_conn,
                                  min_order_size = 1000,
