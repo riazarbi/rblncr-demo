@@ -50,5 +50,5 @@ debug:  ## Launch an interactive environment
 
 .PHONY:
 run: ## Run main routine
-	$(build_run) /bin/bash run.sh
+	$(build_run) Rscript rebalance.R
 
