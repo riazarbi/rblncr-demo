@@ -1,10 +1,11 @@
 ### Modifiable variables ###
+version := 20230210
 
-build_image := riazarbi/rblncr_demo:20230127
-build_source := riazarbi/maker:20230127
+build_image := riazarbi/rblncr_demo:$(version)
+build_source := riazarbi/maker:$(version)
 
-debug_image := riazarbi/rblncr_demo_debug:20230127
-debug_source := riazarbi/maker_binder:20230127
+debug_image := riazarbi/rblncr_demo_debug:$(version)
+debug_source := riazarbi/maker_binder:$(version)
 
 build_run := docker run --rm  $(build_image)
 debug_run := docker run --rm -p 8888:8888 --mount type=bind,source="$(shell pwd)/",target=/home/maker $(debug_image)
@@ -24,6 +25,10 @@ build: ## Build docker container with required dependencies and data
 .PHONY: pull
 pull: ## Pull build image from docker hub
 	docker pull $(build_image)
+
+.PHONY: push
+push: build build-debug ## Pull build image from docker hub
+	docker push $(build_image)
 
 .PHONY: build-debug
 build-debug: ## Build docker debug container with required dependencies
