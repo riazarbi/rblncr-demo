@@ -16,7 +16,7 @@ jobs:
   scheduled:
     runs-on: ubuntu-latest
     container: 
-      image: riazarbi/datasci-quant:focal
+      image: riazarbi/rblncr-demo:20230210
       options: --user root
     steps:
       - name: Check out this repo
