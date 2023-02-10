@@ -1,6 +1,3 @@
-# TODO
-#trader - fix else newline issue
-
 # Load libraries ----
 library(rblncr)
 
