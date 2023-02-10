@@ -7,7 +7,7 @@ build_source := riazarbi/maker:$(version)
 debug_image := riazarbi/rblncr_demo_debug:$(version)
 debug_source := riazarbi/maker_binder:$(version)
 
-build_run := docker run --rm  $(build_image)
+build_run := docker run --rm --user root --mount type=bind,source="$(shell pwd)/",target=/home/maker/  $(build_image)
 debug_run := docker run --rm -p 8888:8888 --mount type=bind,source="$(shell pwd)/",target=/home/maker $(debug_image)
 
 ### Generic targets DO NOT MODIFY ###
