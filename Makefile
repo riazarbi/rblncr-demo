@@ -1,5 +1,5 @@
 ### Modifiable variables ###
-version := 20230210
+version := 20230221
 
 build_image := riazarbi/rblncr_demo:$(version)
 build_source := riazarbi/maker:$(version)
@@ -27,7 +27,7 @@ pull: ## Pull build image from docker hub
 	docker pull $(build_image)
 
 .PHONY: push
-push: build build-debug ## Pull build image from docker hub
+push: build ## Push build image to docker hub
 	docker push $(build_image)
 
 .PHONY: build-debug
