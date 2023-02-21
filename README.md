@@ -3,7 +3,8 @@ Demonstration of how to use [rblncr](https://github.com/riazarbi/rblncr) with Gi
 
 To tinker, launch in binder.
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/riazarbi/rblncr-demo/HEAD)
+RStudio: [![RStudio](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/riazarbi/rblncr-demo/HEAD)
+Shiny: [![Shiny](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/riazarbi/rblncr-demo/HEAD?urlpath=shiny/shiny/)
 
 ## Usage
 
