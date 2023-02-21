@@ -16,7 +16,7 @@ jobs:
   scheduled:
     runs-on: ubuntu-latest
     container: 
-      image: riazarbi/rblncr_demo:20230210
+      image: riazarbi/rblncr_demo:20230221
       options: --user root
     steps:
       - name: Check out this repo
