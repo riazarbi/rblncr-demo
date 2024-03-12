@@ -11,21 +11,36 @@ env:
   ALPACA_PAPER_SECRET: ${{ secrets.ALPACA_PAPER_SECRET }}
   ALPACA_LIVE_KEY: ${{ secrets.ALPACA_LIVE_KEY }}
   ALPACA_LIVE_SECRET: ${{ secrets.ALPACA_LIVE_SECRET }}
-  
+
 jobs:
   scheduled:
     runs-on: ubuntu-latest
-    container: 
-      image: riazarbi/rblncr_demo:20230221
-      options: --user root
     steps:
-      - name: Check out this repo
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+
+      - name: Install packages
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: |
+            any::arrow
+            any::tidyr
+            any::readr
+            any::shiny
+            any::remotes
+
+      - name: Check out repository
         uses: actions/checkout@v3
-      - name: Run rebalancer
-        run: |-
-          Rscript rebalance.R
-      - name: Commit and push if it changed
-        run: |-
+
+      - name: Install rblncr
+        run: Rscript -e 'remotes::install_github("riazarbi/rblncr")'
+
+      #- name: Run rebalancer
+      #  run: |-
+      #    Rscript rebalance.R
+
+      - name: Commit results
+        run: |
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git config user.name "Automated"
           git config user.email "actions@users.noreply.github.com"
