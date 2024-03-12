@@ -6,7 +6,8 @@ Sys.setenv("NOT_CRAN" = TRUE)
 packages <- c("arrow",
               "tidyr",
               "readr",
-              "shiny")
+              "shiny",
+              "remotes")
 
 install.packages(packages)
 
