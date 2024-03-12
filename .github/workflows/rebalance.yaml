@@ -19,21 +19,12 @@ jobs:
       - name: Set up R
         uses: r-lib/actions/setup-r@v2
 
-      - name: Install packages
-        uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          packages: |
-            any::arrow
-            any::tidyr
-            any::readr
-            any::shiny
-            any::remotes
 
       - name: Check out repository
         uses: actions/checkout@v3
 
-      - name: Install rblncr
-        run: Rscript -e 'remotes::install_github("riazarbi/rblncr")'
+      - name: Install dependencies
+        run: Rscript install.R
 
       #- name: Run rebalancer
       #  run: |-
