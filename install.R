@@ -11,4 +11,5 @@ packages <- c("arrow",
 
 install.packages(packages)
 
-remotes::install_github("riazarbi/rblncr")
+Sys.setenv(R_REMOTES_STANDALONE="true")
+remotes::install_github("riazarbi/rblncr@*release")
