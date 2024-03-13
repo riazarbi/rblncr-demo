@@ -1,4 +1,4 @@
-name: Rebalance portfolio
+name: Rebalance Paper Alpaca Portfolio
 
 on:
   workflow_dispatch:
@@ -13,7 +13,7 @@ env:
   ALPACA_LIVE_SECRET: ${{ secrets.ALPACA_LIVE_SECRET }}
 
 jobs:
-  scheduled:
+  rebalance:
     runs-on: ubuntu-latest
     steps:
       - name: Set up R
@@ -26,9 +26,9 @@ jobs:
       - name: Install dependencies
         run: Rscript install.R
 
-      #- name: Run rebalancer
-      #  run: |-
-      #    Rscript rebalance.R
+      - name: Run rebalancer
+        run: |-
+          Rscript rebalance.R
 
       - name: Commit results
         run: |
