@@ -2,7 +2,6 @@ options(HTTPUserAgent = sprintf("R/%s R (%s)", getRversion(), paste(getRversion(
 options(repos="https://packagemanager.rstudio.com/all/__linux__/focal/latest")
 source("https://docs.posit.co/rspm/admin/check-user-agent.R")
 Sys.setenv("NOT_CRAN" = TRUE)
-Sys.unsetenv("GITHUB_PAT")
 
 packages <- c("arrow",
               "tidyr",
