@@ -39,7 +39,7 @@ if(still_cooldown) {
 } else {
 
   balanced <- FALSE
-  cooldown_elapsed
+  
   i <- 1
   attempts <- list()
 
@@ -48,8 +48,8 @@ if(still_cooldown) {
   attempt <- balance_portfolio(portfolio_model = portfolio_model,
                                  trading_connection = t_conn,
                                  pricing_connection = d_conn,
-                                 min_order_size = 1000,
-                                 max_order_size = 100000,
+                                 min_order_size = 100,
+                                 max_order_size = 10000,
                                  daily_vol_pct_limit = 0.02,
                                  pricing_spread_tolerance = 0.01,
                                  pricing_overrides = NULL,
